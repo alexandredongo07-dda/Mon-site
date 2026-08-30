@@ -1,0 +1,1789 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    text-decoration: none;
+    border: none;
+    outline: none;
+
+    scroll-behavior: smooth;
+
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   HTML
+========================================================= */
+
+html {
+    font-size: 60%;
+
+    width: 100%;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --bg-color: #080808;
+
+    --second-bg-color: #001005;
+
+    --text-color: #ffffff;
+
+    --main-color: #00ff51;
+
+    --card-color: #0c0c0c;
+
+    --border-color: rgba(0, 255, 81, 0.35);
+
+}
+
+
+/* =========================================================
+   THEME CLAIR
+========================================================= */
+
+body.light-theme {
+
+    --bg-color: #f5f5f5;
+
+    --second-bg-color: #e8f5ec;
+
+    --text-color: #111111;
+
+    --main-color: #00a83a;
+
+    --card-color: #ffffff;
+
+    --border-color: rgba(0, 168, 58, 0.35);
+
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: var(--bg-color);
+
+    color: var(--text-color);
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease;
+}
+
+
+/* =========================================================
+   ELEMENTS QUI DOIVENT RESTER ACCESSIBLES
+========================================================= */
+
+button,
+a,
+.card {
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 90px;
+
+    padding: 1.5rem 12%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    background: rgba(0, 0, 0, 0.70);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border-color);
+
+    z-index: 1000;
+
+    transition:
+        background-color 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* HEADER THEME CLAIR */
+
+body.light-theme .header {
+
+    background: rgba(255, 255, 255, 0.80);
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-container {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.2rem;
+
+    flex-shrink: 0;
+}
+
+
+.logo-img {
+
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--main-color);
+
+    box-shadow:
+        0 0 10px var(--main-color),
+        0 0 25px rgba(0, 255, 81, 0.4);
+
+    transition: 0.4s ease;
+
+    animation: logoPulse 2.5s infinite ease-in-out;
+}
+
+
+.logo-img:hover {
+
+    transform: scale(1.1) rotate(5deg);
+
+    box-shadow:
+        0 0 15px var(--main-color),
+        0 0 35px var(--main-color);
+}
+
+
+.logo-text {
+
+    color: var(--text-color);
+
+    font-size: 3rem;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+
+.logo-text span {
+
+    color: var(--main-color);
+
+    text-shadow:
+        0 0 10px var(--main-color);
+}
+
+
+.logo-text:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.navbar a {
+
+    position: relative;
+
+    color: var(--text-color);
+
+    font-size: 1.8rem;
+
+    font-weight: 500;
+
+    margin-left: 3.5rem;
+
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+
+.navbar a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 3px;
+
+    background: var(--main-color);
+
+    box-shadow:
+        0 0 10px var(--main-color);
+
+    transition: 0.3s ease;
+}
+
+
+.navbar a:hover,
+.navbar a.active {
+
+    color: var(--main-color);
+
+    text-shadow:
+        0 0 10px var(--main-color);
+}
+
+
+.navbar a:hover::after,
+.navbar a.active::after {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   BOUTON THEME
+========================================================= */
+
+.theme-toggle {
+
+    width: 48px;
+
+    height: 48px;
+
+    min-width: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    border: 2px solid var(--main-color);
+
+    color: var(--main-color);
+
+    font-size: 2.3rem;
+
+    cursor: pointer;
+
+    transition: 0.4s ease;
+
+}
+
+
+.theme-toggle:hover {
+
+    background: var(--main-color);
+
+    color: var(--bg-color);
+
+    transform: rotate(180deg) scale(1.1);
+
+    box-shadow:
+        0 0 15px var(--main-color),
+        0 0 35px var(--main-color);
+
+}
+
+
+/* =========================================================
+   MENU MOBILE
+========================================================= */
+
+#menu-icon {
+
+    display: none;
+
+    font-size: 3.5rem;
+
+    color: var(--main-color);
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   SECTION CERTIFICATIONS
+========================================================= */
+
+.certifications {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 15rem 12% 8rem;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(0, 255, 81, 0.08),
+            transparent 35%
+        ),
+        var(--bg-color);
+
+    overflow: hidden;
+
+    transition:
+        background-color 0.4s ease;
+}
+
+
+/* =========================================================
+   DECORATIONS
+========================================================= */
+
+.certifications::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    top: 10%;
+
+    left: -200px;
+
+    border: 2px solid rgba(0, 255, 81, 0.12);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation: rotation 15s linear infinite;
+
+}
+
+
+.certifications::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    right: -170px;
+
+    bottom: 5%;
+
+    border: 2px solid rgba(0, 255, 81, 0.10);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation: rotation 12s linear infinite reverse;
+
+}
+
+
+/* =========================================================
+   TITRE
+========================================================= */
+
+.section-title {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: 0 auto 5rem;
+
+    text-align: center;
+
+}
+
+
+.section-title > span {
+
+    display: inline-block;
+
+    color: var(--main-color);
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 0 15px var(--main-color);
+}
+
+
+.section-title h1 {
+
+    margin: 1.5rem 0;
+
+    color: var(--text-color);
+
+    font-size: 7rem;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+}
+
+
+.section-title h1 strong {
+
+    color: var(--main-color);
+
+    text-shadow:
+        0 0 10px var(--main-color),
+        0 0 30px rgba(0, 255, 81, 0.5);
+}
+
+
+.section-title p {
+
+    color: var(--text-color);
+
+    opacity: 0.75;
+
+    font-size: 1.6rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   CONTAINER CAROUSEL
+========================================================= */
+
+.carousel-container {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+/* =========================================================
+   CAROUSEL
+========================================================= */
+
+.carousel {
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 3rem;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding: 2rem 1rem 4rem;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+    cursor: grab;
+
+}
+
+
+.carousel:active {
+
+    cursor: grabbing;
+
+}
+
+
+.carousel::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   CARTE
+========================================================= */
+
+.card {
+
+    position: relative;
+
+    flex: 0 0 370px;
+
+    min-height: 400px;
+
+    padding: 3.5rem;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: var(--card-color);
+
+    border: 2px solid var(--border-color);
+
+    border-radius: 3rem;
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 81, 0.05);
+
+    transition:
+        transform 0.4s ease,
+        background-color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+
+    animation: apparition 0.8s ease both;
+}
+
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 100%;
+
+    height: 3px;
+
+    background: var(--main-color);
+
+    box-shadow:
+        0 0 20px var(--main-color);
+
+    transition: 0.5s ease;
+}
+
+
+.card:hover::before {
+
+    left: 0;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-12px);
+
+    border-color: var(--main-color);
+
+    background: var(--second-bg-color);
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 81, 0.4),
+        0 0 50px rgba(0, 255, 81, 0.15);
+
+}
+
+
+/* =========================================================
+   ICONE CERTIFICATION
+========================================================= */
+
+.cert-icon {
+
+    width: 75px;
+
+    height: 75px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 2.5rem;
+
+    border: 2px solid var(--main-color);
+
+    border-radius: 50%;
+
+    color: var(--main-color);
+
+    background: transparent;
+
+    font-size: 3.5rem;
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 81, 0.2);
+
+    transition: 0.4s ease;
+
+}
+
+
+.card:hover .cert-icon {
+
+    background: var(--main-color);
+
+    color: var(--bg-color);
+
+    transform: rotate(10deg) scale(1.1);
+
+    box-shadow:
+        0 0 20px var(--main-color),
+        0 0 40px rgba(0, 255, 81, 0.5);
+
+}
+
+
+/* =========================================================
+   NUMERO
+========================================================= */
+
+.number {
+
+    position: absolute;
+
+    top: 2rem;
+
+    right: 3rem;
+
+    color: rgba(0, 255, 81, 0.08);
+
+    font-size: 5rem;
+
+    font-weight: 800;
+
+    transition: 0.4s ease;
+}
+
+
+.card:hover .number {
+
+    color: rgba(0, 255, 81, 0.18);
+
+}
+
+
+/* =========================================================
+   TITRE CARTE
+========================================================= */
+
+.card h2 {
+
+    margin-bottom: 1.5rem;
+
+    color: var(--text-color);
+
+    font-size: 2.7rem;
+
+    line-height: 1.3;
+
+    transition: 0.3s ease;
+}
+
+
+.card:hover h2 {
+
+    color: var(--main-color);
+
+    text-shadow:
+        0 0 10px rgba(0, 255, 81, 0.4);
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.card p {
+
+    min-height: 8rem;
+
+    color: var(--text-color);
+
+    opacity: 0.7;
+
+    font-size: 1.5rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BAS CARTE
+========================================================= */
+
+.bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-top: 2rem;
+
+    padding-top: 2rem;
+
+    border-top: 1px solid var(--border-color);
+
+    color: var(--text-color);
+
+    opacity: 0.75;
+
+    font-size: 1.25rem;
+}
+
+
+.bottom i {
+
+    color: var(--main-color);
+
+    margin-right: 0.5rem;
+
+}
+
+
+.year {
+
+    padding: 0.6rem 1.2rem;
+
+    color: var(--main-color);
+
+    border: 1px solid var(--main-color);
+
+    border-radius: 2rem;
+
+}
+
+
+/* =========================================================
+   MESSAGE CLIQUABLE
+========================================================= */
+
+.click-info {
+
+    margin-top: 2rem;
+
+    color: var(--main-color);
+
+    font-size: 1.3rem;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition: 0.3s ease;
+}
+
+
+.card:hover .click-info {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   BOUTONS CAROUSEL
+========================================================= */
+
+.arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transform: translateY(-50%);
+
+    border: 2px solid var(--main-color);
+
+    border-radius: 50%;
+
+    background: var(--bg-color);
+
+    color: var(--main-color);
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    transition: 0.3s ease;
+}
+
+
+.arrow:hover {
+
+    background: var(--main-color);
+
+    color: var(--bg-color);
+
+    transform: translateY(-50%) scale(1.12);
+
+    box-shadow:
+        0 0 20px var(--main-color),
+        0 0 40px rgba(0, 255, 81, 0.5);
+
+}
+
+
+.left {
+
+    left: -25px;
+
+}
+
+
+.right {
+
+    right: -25px;
+
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.dots {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+}
+
+
+.dot {
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #444;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.dot.active {
+
+    width: 30px;
+
+    border-radius: 10px;
+
+    background: var(--main-color);
+
+    box-shadow:
+        0 0 10px var(--main-color);
+}
+
+
+/* =========================================================
+   MODALE CERTIFICAT
+========================================================= */
+
+.certificate-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    padding: 2rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 5000;
+
+    transition: 0.4s ease;
+}
+
+
+.certificate-modal.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================================================
+   CONTENU MODALE
+========================================================= */
+
+.certificate-content {
+
+    position: relative;
+
+    width: min(1200px, 95vw);
+
+    height: min(90vh, 900px);
+
+    padding: 2rem;
+
+    background: #050505;
+
+    border: 2px solid var(--main-color);
+
+    border-radius: 2rem;
+
+    box-shadow:
+        0 0 25px var(--main-color),
+        0 0 60px rgba(0, 255, 81, 0.35);
+
+    transform: scale(0.8);
+
+    transition: 0.4s ease;
+}
+
+
+.certificate-modal.active .certificate-content {
+
+    transform: scale(1);
+
+}
+
+
+/* =========================================================
+   TITRE MODALE
+========================================================= */
+
+.certificate-content h2 {
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    color: var(--main-color);
+
+    font-size: 2.3rem;
+
+    text-shadow:
+        0 0 10px var(--main-color);
+
+}
+
+
+.certificate-content h2 i {
+
+    margin-right: 1rem;
+
+}
+
+
+/* =========================================================
+   PDF
+========================================================= */
+
+#certificateViewer {
+
+    display: block;
+
+    width: 100%;
+
+    height: calc(100% - 60px);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 1rem;
+
+    background: white;
+}
+
+
+/* =========================================================
+   BOUTON FERMER
+========================================================= */
+
+.close-certificate {
+
+    position: absolute;
+
+    top: 1.3rem;
+
+    right: 1.3rem;
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 2px solid var(--main-color);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--main-color);
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition: 0.3s ease;
+}
+
+
+.close-certificate:hover {
+
+    background: var(--main-color);
+
+    color: black;
+
+    transform: rotate(90deg);
+
+    box-shadow:
+        0 0 15px var(--main-color),
+        0 0 35px var(--main-color);
+
+}
+
+
+/* =========================================================
+   BLOQUER LE SCROLL UNIQUEMENT AVEC LA MODALE
+========================================================= */
+
+body.modal-open {
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 5rem 12% 2rem;
+
+    background: var(--bg-color);
+
+    border-top: 1px solid var(--border-color);
+
+    transition:
+        background-color 0.4s ease;
+}
+
+
+.footer-content {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 3rem;
+}
+
+
+.footer-content h3 {
+
+    margin-bottom: 1rem;
+
+    color: var(--text-color);
+
+    font-size: 2.8rem;
+}
+
+
+.footer-content h3 span {
+
+    color: var(--main-color);
+
+}
+
+
+.footer-content p {
+
+    max-width: 550px;
+
+    color: var(--text-color);
+
+    opacity: 0.65;
+
+    font-size: 1.4rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESEAUX SOCIAUX
+========================================================= */
+
+.socials {
+
+    display: flex;
+
+    gap: 1.5rem;
+}
+
+
+.socials a {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 2px solid var(--main-color);
+
+    border-radius: 50%;
+
+    color: var(--main-color);
+
+    font-size: 1.8rem;
+
+    transition: 0.3s ease;
+}
+
+
+.socials a:hover {
+
+    background: var(--main-color);
+
+    color: var(--bg-color);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 20px var(--main-color);
+
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.copyright {
+
+    margin-top: 4rem;
+
+    padding-top: 2rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+
+    color: var(--text-color);
+
+    opacity: 0.5;
+
+    font-size: 1.3rem;
+}
+
+
+/* =========================================================
+   SCROLLBAR PRINCIPALE
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 12px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #111;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--main-color);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 10px var(--main-color);
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #00c943;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes apparition {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+@keyframes rotation {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes logoPulse {
+
+    0% {
+
+        box-shadow:
+            0 0 8px var(--main-color),
+            0 0 15px rgba(0, 255, 81, 0.3);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 15px var(--main-color),
+            0 0 35px rgba(0, 255, 81, 0.6);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 8px var(--main-color),
+            0 0 15px rgba(0, 255, 81, 0.3);
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLETTE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .header {
+
+        padding: 1.5rem 6%;
+
+    }
+
+
+    .certifications {
+
+        padding: 14rem 6% 7rem;
+
+    }
+
+
+    .section-title h1 {
+
+        font-size: 5.5rem;
+
+    }
+
+
+    .navbar a {
+
+        margin-left: 2rem;
+
+        font-size: 1.6rem;
+
+    }
+
+
+    .card {
+
+        flex-basis: 340px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    html {
+
+        font-size: 55%;
+
+    }
+
+
+    .header {
+
+        height: 75px;
+
+        padding: 1rem 5%;
+
+    }
+
+
+    .logo-img {
+
+        width: 48px;
+
+        height: 48px;
+
+    }
+
+
+    .logo-text {
+
+        font-size: 2.5rem;
+
+    }
+
+
+    #menu-icon {
+
+        display: block;
+
+    }
+
+
+    .navbar {
+
+        position: absolute;
+
+        top: 100%;
+
+        right: 0;
+
+        width: 70%;
+
+        padding: 2rem;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        background: rgba(0, 0, 0, 0.95);
+
+        border-left: 2px solid var(--main-color);
+
+        border-bottom: 2px solid var(--main-color);
+
+        border-bottom-left-radius: 2rem;
+
+    }
+
+
+    body.light-theme .navbar {
+
+        background: rgba(255, 255, 255, 0.97);
+
+    }
+
+
+    .navbar.active {
+
+        display: flex;
+
+    }
+
+
+    .navbar a {
+
+        margin: 1.5rem 0;
+
+        font-size: 1.8rem;
+
+    }
+
+
+    .certifications {
+
+        padding: 12rem 5% 6rem;
+
+    }
+
+
+    .section-title {
+
+        margin-bottom: 3rem;
+
+    }
+
+
+    .section-title h1 {
+
+        font-size: 4.2rem;
+
+    }
+
+
+    .section-title p {
+
+        font-size: 1.4rem;
+
+    }
+
+
+    .carousel {
+
+        gap: 2rem;
+
+        padding: 1rem 0 3rem;
+
+    }
+
+
+    .card {
+
+        flex: 0 0 85vw;
+
+        min-height: 390px;
+
+        padding: 2.5rem;
+
+    }
+
+
+    .arrow {
+
+        display: none;
+
+    }
+
+
+    .click-info {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+
+    .certificate-modal {
+
+        padding: 1rem;
+
+    }
+
+
+    .certificate-content {
+
+        width: 98vw;
+
+        height: 92vh;
+
+        padding: 1rem;
+
+    }
+
+
+    .certificate-content h2 {
+
+        font-size: 1.8rem;
+
+        height: 45px;
+
+    }
+
+
+    #certificateViewer {
+
+        height: calc(100% - 55px);
+
+    }
+
+
+    .close-certificate {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 1.8rem;
+
+    }
+
+
+    .footer-content {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .footer-content p {
+
+        margin: auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   PETIT MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    html {
+
+        font-size: 52%;
+
+    }
+
+
+    .logo-text {
+
+        font-size: 2.2rem;
+
+    }
+
+
+    .theme-toggle {
+
+        width: 42px;
+
+        height: 42px;
+
+        min-width: 42px;
+
+        font-size: 2rem;
+
+    }
+
+
+    .section-title h1 {
+
+        font-size: 3.5rem;
+
+    }
+
+
+    .card {
+
+        flex-basis: 88vw;
+
+    }
+
+
+    .bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .certificate-content h2 {
+
+        padding-right: 4rem;
+
+    }
+
+}

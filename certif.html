@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mes Certifications | Alex_DDA</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="certif.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="logo-container">
+
+            <img src="image/monlogo1.jpeg"
+                 alt="Logo Alex_DDA"
+                 class="logo-img">
+
+            <a href="index.html" class="logo-text">
+                Alex<span>_DDA</span>
+            </a>
+
+        </div>
+
+
+        <nav class="navbar">
+
+            <a href="index.html">Accueil</a>
+
+            <a href="certifications.html" class="active">
+                Certifications
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div id="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         SECTION CERTIFICATIONS
+    ========================== -->
+
+    <section class="certifications" id="certifications">
+
+        <div class="section-title">
+
+            <span>MON PARCOURS</span>
+
+            <h1>
+                Mes <strong>Certifications</strong>
+            </h1>
+
+            <p>
+                Découvrez les certifications et formations que j'ai
+                obtenues dans le domaine de l'informatique,
+                du développement web et des technologies numériques.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             CAROUSEL
+        ========================== -->
+
+        <div class="carousel-container">
+
+            <!-- PRECEDENT -->
+
+            <button class="arrow left" id="prev">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+
+            <div class="carousel" id="carousel">
+
+
+                <!-- ================= CERTIFICATION 1 ================= -->
+
+                <article class="card"
+                         onclick="openCertificate('certificats/certificat1.pdf')">
+
+                    <div class="cert-icon">
+
+                        <i class="fa-solid fa-network-wired"></i>
+
+                    </div>
+
+                    <span class="number">01</span>
+
+                    <h2>
+                        Introduction aux réseaux
+                    </h2>
+
+                    <p>
+                        Formation consacrée aux fondamentaux
+                        des réseaux informatiques.
+                    </p>
+
+                    <div class="bottom">
+
+                        <span>
+                            <i class="fa-solid fa-building"></i>
+                            Cisco Networking Academy
+                        </span>
+
+                        <span class="year">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <div class="click-info">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        Cliquer pour voir le certificat
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================= CERTIFICATION 2 ================= -->
+
+                <article class="card"
+                         onclick="openCertificate('certificats/certificat2.pdf')">
+
+                    <div class="cert-icon">
+
+                        <i class="fa-solid fa-code"></i>
+
+                    </div>
+
+                    <span class="number">02</span>
+
+                    <h2>
+                        Développement Web
+                    </h2>
+
+                    <p>
+                        Formation consacrée à la conception
+                        et au développement de sites web.
+                    </p>
+
+                    <div class="bottom">
+
+                        <span>
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            OpenClassrooms
+                        </span>
+
+                        <span class="year">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <div class="click-info">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        Cliquer pour voir le certificat
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================= CERTIFICATION 3 ================= -->
+
+                <article class="card"
+                         onclick="openCertificate('certificats/certificat3.pdf')">
+
+                    <div class="cert-icon">
+
+                        <i class="fa-solid fa-database"></i>
+
+                    </div>
+
+                    <span class="number">03</span>
+
+                    <h2>
+                        Base de données
+                    </h2>
+
+                    <p>
+                        Formation sur la conception,
+                        la gestion et l'utilisation des
+                        bases de données.
+                    </p>
+
+                    <div class="bottom">
+
+                        <span>
+                            <i class="fa-solid fa-database"></i>
+                            Formation informatique
+                        </span>
+
+                        <span class="year">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <div class="click-info">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        Cliquer pour voir le certificat
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================= CERTIFICATION 4 ================= -->
+
+                <article class="card"
+                         onclick="openCertificate('certificats/certificat4.pdf')">
+
+                    <div class="cert-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <span class="number">04</span>
+
+                    <h2>
+                        Cybersécurité
+                    </h2>
+
+                    <p>
+                        Découverte des principes fondamentaux
+                        de la sécurité informatique.
+                    </p>
+
+                    <div class="bottom">
+
+                        <span>
+                            <i class="fa-solid fa-building"></i>
+                            Cisco Networking Academy
+                        </span>
+
+                        <span class="year">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <div class="click-info">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        Cliquer pour voir le certificat
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================= CERTIFICATION 5 ================= -->
+
+                <article class="card"
+                         onclick="openCertificate('certificats/certificat5.pdf')">
+
+                    <div class="cert-icon">
+
+                        <i class="fa-brands fa-html5"></i>
+
+                    </div>
+
+                    <span class="number">05</span>
+
+                    <h2>
+                        HTML & CSS
+                    </h2>
+
+                    <p>
+                        Formation dédiée à la création et
+                        à la mise en forme de pages web.
+                    </p>
+
+                    <div class="bottom">
+
+                        <span>
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            OpenClassrooms
+                        </span>
+
+                        <span class="year">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <div class="click-info">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        Cliquer pour voir le certificat
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================= CERTIFICATION 6 ================= -->
+
+                <article class="card"
+                         onclick="openCertificate('certificats/certificat6.pdf')">
+
+                    <div class="cert-icon">
+
+                        <i class="fa-brands fa-js"></i>
+
+                    </div>
+
+                    <span class="number">06</span>
+
+                    <h2>
+                        JavaScript
+                    </h2>
+
+                    <p>
+                        Formation sur la programmation
+                        et l'interactivité des applications web.
+                    </p>
+
+                    <div class="bottom">
+
+                        <span>
+                            <i class="fa-solid fa-code"></i>
+                            Formation Web
+                        </span>
+
+                        <span class="year">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <div class="click-info">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        Cliquer pour voir le certificat
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================= CERTIFICATION 7 ================= -->
+
+                <article class="card"
+                         onclick="openCertificate('certificats/certificat1.html.pdf')">
+
+                    <div class="cert-icon">
+
+                        <i class="fa-brands fa-php"></i>
+
+                    </div>
+
+                    <span class="number">07</span>
+
+                    <h2>
+                        PHP & MySQL
+                    </h2>
+
+                    <p>
+                        Développement d'applications web
+                        dynamiques avec PHP et MySQL.
+                    </p>
+
+                    <div class="bottom">
+
+                        <span>
+                            <i class="fa-solid fa-code"></i>
+                            Formation Web
+                        </span>
+
+                        <span class="year">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <div class="click-info">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        Cliquer pour voir le certificat
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================= CERTIFICATION 8 ================= -->
+
+                <article class="card"
+                         onclick="openCertificate('certificats/certificat2.html.pdf')">
+
+                    <div class="cert-icon">
+
+                        <i class="fa-solid fa-cloud"></i>
+
+                    </div>
+
+                    <span class="number">08</span>
+
+                    <h2>
+                        Technologies 
+                    </h2>
+
+                    <p>
+                        Découverte des concepts fondamentaux
+                        des technologies et de l'IA.
+                    </p>
+
+                    <div class="bottom">
+
+                        <span>
+                            <i class="fa-solid fa-building"></i>
+                            MTN Academy
+                        </span>
+
+                        <span class="year">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <div class="click-info">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        Cliquer pour voir le certificat
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================= CERTIFICATION 9 ================= -->
+
+                <article class="card"
+                         onclick="openCertificate('certificats/certificat2.pdf')">
+
+                    <div class="cert-icon">
+
+                        <i class="fa-solid fa-mobile-screen"></i>
+
+                    </div>
+
+                    <span class="number">09</span>
+
+                    <h2>
+                        Technologies numériques
+                    </h2>
+
+                    <p>
+                        Formation consacrée aux outils et
+                        technologies numériques modernes.
+                    </p>
+
+                    <div class="bottom">
+
+                        <span>
+                            <i class="fa-solid fa-building"></i>
+                            MTN Academy
+                        </span>
+
+                        <span class="year">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <div class="click-info">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        Cliquer pour voir le certificat
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================= CERTIFICATION 10 ================= -->
+
+                
+            </div>
+
+
+
+            <!-- SUIVANT -->
+
+            <button class="arrow right" id="next">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- DOTS -->
+
+        <div class="dots" id="dots"></div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MODALE CERTIFICAT
+    ========================== -->
+
+    <div class="certificate-modal" id="certificateModal">
+
+        <div class="certificate-content">
+
+            <button class="close-certificate"
+                    onclick="closeCertificate()">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <h2>
+
+                <i class="fa-solid fa-certificate"></i>
+
+                Mon certificat
+
+            </h2>
+
+
+            <iframe
+                id="certificateViewer"
+                title="Visualisation du certificat">
+            </iframe>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer id="contact">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>
+                    Alex<span>_DDA</span>
+                </h3>
+
+                <p>
+                    Développeur web passionné par les nouvelles
+                    technologies et la création de solutions numériques.
+                </p>
+
+            </div>
+
+
+            <div class="socials">
+
+                <a href="#" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="#" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Alex_DDA — Tous droits réservés.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="certif.js"></script>
+
+</body>
+
+</html>
